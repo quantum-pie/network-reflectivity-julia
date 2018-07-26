@@ -12,7 +12,7 @@ function apply_minrms(Zm::Tuple{Vararg{Matrix{Float64}}}, W::Vector{Array{Float6
 
   # run simple algorithm on polar grid
   for iter in 1:iterations
-    Zest = map(z -> stupid_slow_nonconverging_algorithm(z[1], z[2], alpha_beta, radar_params), Tuple(zip(Zm, Zest)))
+    Zest = map(z -> slow_nonconverging_algorithm(z[1], z[2], alpha_beta, radar_params), Tuple(zip(Zm, Zest)))
     X = combine_projections_dist(Zest, pts, cell_geometry, radar_params, alpha_beta)
 
     Zest_proj = Vector{Matrix{Float64}}(cell_geometry.radars)

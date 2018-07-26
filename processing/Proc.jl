@@ -49,7 +49,7 @@ function evaluate(Z_est::Vector{Float64}, Z_t::Vector{Float64},
 end
 
 function run_processing()
-  # load various shit
+  # load various helpers
   alpha_beta = grant_ab()
   (Zm, Z_hlpr) = grant_meas()
   w_fun = grant_lwc()

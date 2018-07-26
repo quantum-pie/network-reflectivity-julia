@@ -24,7 +24,7 @@ function generate_measurements(alpha::Vector{Float64}, r::Vector{Float64},
 
   water_content = w_fun.(Pair.(x, y))
 
-  # expensive shit
+  # expensive operation
   Zt = pmap(Z_hlpr, water_content)
 
   Ka = zeros(size(Zt))

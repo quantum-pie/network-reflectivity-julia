@@ -1,7 +1,7 @@
 module Basic
 
 using AlphaBeta, Descriptors
-export nfir, stupid_slow_nonconverging_algorithm
+export nfir, slow_nonconverging_algorithm
 
 function nfir(Zm::Matrix{Float64}, alpha_beta::KtoZ, radar_params::RadarParams)
   to_power = 1 - log(10) / 5 * alpha_beta.alpha * alpha_beta.beta *
@@ -13,7 +13,7 @@ function nfir(Zm::Matrix{Float64}, alpha_beta::KtoZ, radar_params::RadarParams)
   Z
 end
 
-function stupid_slow_nonconverging_algorithm(Zm::Matrix{Float64}, Zest::Matrix{Float64},
+function slow_nonconverging_algorithm(Zm::Matrix{Float64}, Zest::Matrix{Float64},
                                 alpha_beta::KtoZ, radar_params::RadarParams)
   gam = log(10) / 5 * alpha_beta.alpha * radar_params.range_elem * 1e-3
 
